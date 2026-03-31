@@ -6,7 +6,7 @@
 - SSH Access: `sudoer user`
 
 ## Why?
-I built this project to help me deploy and manage multiple containerized and isolated websites on the same server with just 1 command `project.sh add <domain-name>`.
+I built this project to help me deploy and manage multiple containerized and isolated websites hosting on the same server. Using just one command `project.sh add <domain-name>` help me deploy a whole running web stack for that domain in seconds.
 
 ## Architecture
 > [!Note]

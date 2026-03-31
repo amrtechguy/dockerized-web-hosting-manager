@@ -117,7 +117,7 @@ I built this project to help me deploy and manage multiple containerized and iso
 - [x] Build: Framework basic structure.
 - [x] Add: Module `global proxy`.
 - [x] Add: Module `project`.
-- [ ] Cleanup: fix and standerdize the content of format of output `messages`.
+- [ ] Cleanup: fix and standerdize the content and format of output `messages`.
 - [ ] Add: Feature `HTTPS`.
 - [ ] Add: Module `database`.
 - [ ] Add: Module `ftp`.

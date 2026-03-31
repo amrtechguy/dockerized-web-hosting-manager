@@ -1,0 +1,44 @@
+name: ${PROJECT_NAME}
+
+services: 
+  php:
+    image: '${PHP_IMAGE}'
+    container_name: ${PROJECT_NAME}-php
+    env_file:
+      - .env
+    deploy:
+      resources:
+        limits:
+          cpus: '${PHP_CPU_LIMIT}'
+          memory: ${PHP_MEM_LIMIT}
+    volumes:
+      - ./php-fpm:/usr/local/etc
+      - ${WWW_DIR}/html:/var/www/html
+    command: >
+      sh -c "echo '${USER_NAME}:x:${USER_ID}:${GROUP_ID}:::/usr/sbin/nologin' >> /etc/passwd && echo '${GROUP_NAME}:x:${GROUP_ID}:' >> /etc/group && php-fpm -F -R -y /usr/local/etc/php-fpm.conf -d user=${USER_NAME} -d ${GROUP_NAME}"
+    networks:
+      - internal
+          
+  nginx:
+    image: '${NGINX_IMAGE}'
+    container_name: ${PROJECT_NAME}-nginx
+    env_file:
+      - .env
+    deploy:
+      resources:
+        limits:
+          cpus: '${NGINX_CPU_LIMIT}'
+          memory: ${NGINX_MEM_LIMIT}
+    volumes:
+      - ./nginx:/etc/nginx
+      - ${WWW_DIR}/html:/var/www/html
+    command: >
+      sh -c "echo '${USER_NAME}:x:${USER_ID}:${GROUP_ID}:::/usr/sbin/nologin' >> /etc/passwd && echo '${GROUP_NAME}:x:${GROUP_ID}:' >> /etc/group && nginx -g 'daemon off;'"
+    networks:
+      - internal
+      - global-proxy-network
+          
+networks:
+  internal:
+  global-proxy-network:
+    external: true

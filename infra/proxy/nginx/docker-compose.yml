@@ -1,0 +1,23 @@
+name: ${PROJECT_NAME}
+
+services:
+  nginx:
+    image: '${NGINX_IMAGE}'
+    container_name: ${PROJECT_NAME}-nginx
+    ports:
+      - '80:80'
+    env_file:
+      - .env
+    deploy:
+      resources:
+        limits:
+          cpus: '${NGINX_CPU_LIMIT}'
+          memory: ${NGINX_MEM_LIMIT}
+    volumes:
+      - ./nginx/conf.d:/etc/nginx/conf.d
+    networks:
+      - global-proxy-network
+          
+networks:
+  global-proxy-network:
+    name: global-proxy-network

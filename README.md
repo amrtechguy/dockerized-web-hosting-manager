@@ -8,9 +8,16 @@
 ## Why?
 I built this project to help me deploy and manage multiple containerized and isolated websites on the same server with just 1 command `project.sh add <domain-name>`.
 
+## Architecture
+> [!Note]
+> Grey boxes and ports are not implemented yet.
+
+![Architecture Diagram](https://amrtechguy.gitbook.io/notes/~gitbook/image?url=https%3A%2F%2F2482911144-files.gitbook.io%2F%7E%2Ffiles%2Fv0%2Fb%2Fgitbook-x-prod.appspot.com%2Fo%2Fspaces%252FsBK3S4DyoIwlbBEWR4Xh%252Fuploads%252FP8phihfNlY7GhdPS5wI3%252Fdockerized-web-hosting-manager.png%3Falt%3Dmedia%26token%3D30ef9fd9-9edc-41e6-ad62-97b51b24df02&width=768&dpr=3&quality=100&sign=c3b10a18&sv=2)
+
 ## Framwork Structure
 > [!Note]
 > If one of `required_dirs`, `required_files`, `required_commands` is missing the deployment will not start.
+
 - `./data/`: The framework stores its data here in text files.
     - `./project_id`: stores last added project's id.
     - `./user_id`: stores last added project's user id.

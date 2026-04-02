@@ -2,7 +2,7 @@
 
 ## Environment
 - Docker: `29.3`
-- Target System: `Ubuntu 25.04.4 LTS`
+- Target System: `Ubuntu 24.04.4 LTS`
 - SSH Access: `sudoer user`
 
 ## Why?

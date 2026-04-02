@@ -2,6 +2,11 @@
 
 export FRAMEWORK_ROOT_DIR=$(pwd)
 
+# create dir `project` if missing
+if ! [ -d $FRAMEWORK_ROOT_DIR/project ]; then
+	mkdir $FRAMEWORK_ROOT_DIR/project
+fi
+
 # check requirements
 echo -e "Task:\tChecking Dependencies"
 $FRAMEWORK_ROOT_DIR/bin/check-requirements.sh $FRAMEWORK_ROOT_DIR

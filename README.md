@@ -67,6 +67,8 @@ I have a single server or virtual machine and want to deploy multiple web applic
 ```
 > [!Note]
 > Each project has its unique domain name, project id, user, group.
+>
+**The framework does the following tasks in order:**
 - Take a domain name.
 - Generate a unique `project id`, `user id`, `username`, `group id`, `group name`.
 - Check any duplicates with existing projects.
@@ -80,7 +82,8 @@ I have a single server or virtual machine and want to deploy multiple web applic
 - Add `<domain-name>.conf` file to the proxy for forwarding the incoming http traffic to the project's `Nginx` container.
 - Test proxy for any configuration errors.
 - Reload the proxy to add the new file `<domain-name>.conf`.
-- Test the new project from a client host `curl -H 'host: <domain-name>' http://[server-ip]`.
+
+Now, you can test the new project from a client host `curl -H 'host: <domain-name>' http://[server-ip]`.
 
 ## Usage
 

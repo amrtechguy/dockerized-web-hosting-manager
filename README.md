@@ -5,8 +5,11 @@
 - Target System: `Ubuntu 24.04.4 LTS`
 - SSH Access: `sudoer user`
 
-## Why?
-I built this project to help me deploy and manage multiple containerized and isolated websites hosting on the same server. Using just one command `project.sh add <domain-name>` help me deploy a whole running web stack for that domain in seconds.
+## About
+It's an automation framework for deploying multiple dockerized web applications on a single server. The hosting server will serve each web application based on the `HOST` header received in the `HTTP` request. Each web application will have its own isolated environemnt on the host system including specific unique user and group for each web application containers with hardened permissions to ensure higher isolation on the host system. Also the framework implements virtual networks with different level of isolation.
+
+## Use Case Scenario
+I have a single server or virtual machine and want to deploy multiple web applications on it and each application will have its own domain name, isolated environment, and specific resource limits of CPU and Memory that could be modified anytime based on requirements. All I can do to implement a whole running web stack of `Nginx`, `PHP-FPM` is to run the command `./project.sh add <domain-name>`.
 
 ## Architecture
 > [!Note]

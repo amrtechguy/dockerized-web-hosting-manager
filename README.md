@@ -121,15 +121,3 @@ I have a single server or virtual machine and want to deploy multiple web applic
 # take down a specific infrastructure module e.g. 'proxy'
 ./infra.sh down <component-name>
 ```
-
-## Roadmap
-- [x] Design: The framework modules, workflow, structure.
-- [x] Build: Framework basic structure.
-- [x] Add: Module `global proxy`.
-- [x] Add: Module `project`.
-- [ ] Cleanup: fix and standerdize the content and format of output `messages`.
-- [ ] Add: Feature `HTTPS`.
-- [ ] Add: Module `database`.
-- [ ] Add: Module `ftp`.
-- [ ] Add: Module `logger`.
-- [ ] Add: Module `monitor`.

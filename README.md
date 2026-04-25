@@ -39,7 +39,7 @@ I have a single server or virtual machine and want to deploy multiple web applic
 - `infra.sh`: Manages the infrastructure modules e.g. `proxy`, `database`, `ftp`.
 - `project.sh`: Manages the website projects identified by their domain names.
 
-## Framework Components?
+## Framework Components
 
 ### Infrastructure Components:
 - Container: `Nginx` as a global proxy.
